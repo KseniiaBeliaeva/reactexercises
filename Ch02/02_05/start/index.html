@@ -20,15 +20,20 @@
 
 	<script type="text/babel">
 
-		const Banner = () => (
-			<div id="fancy">
-				<h1 className="heading">Welcome To React</h1>
-				<p>Have fun!</p>
-			</div>	
-		)
+		class Hello extends React.Component  {
+			render () {
+				return (
+                   <div>
+				   <h1>Hello {this.props.firstName} </h1>
+				   <p>Learning React Version {this.props.version}</p>
+				   </div>
+				)
+			}
+		}
+		const HelloStateless = ({firstName, version}) => <h1>Hello {firstName} and {version}</h1>
 	
 		ReactDOM.render(
-			<Banner />,
+			<HelloStateless firstName="Kseniia" version={16.3}/>,
 			document.getElementById('react-container')
 		)
 
