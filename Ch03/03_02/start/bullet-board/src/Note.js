@@ -9,7 +9,7 @@ class Note extends Component {
         this.state = {
             editing:false
         }
-            this.edit = this.edit.bind(this)
+        this.edit = this.edit.bind(this);
         this.remove = this.remove.bind(this);
         this.renderForm = this.renderForm.bind(this);
         this.renderDisplay = this.renderDisplay.bind(this);
@@ -26,13 +26,14 @@ class Note extends Component {
         alert('Removing note')
     }
     save() { 
-        alert("Saved!");
+        alert(this._newText.value);
     }
+
     renderForm() { 
         return (
             <div className="note">
                 <form>
-                    <textarea />
+                    <textarea ref={input => this._newText = input}/>
                     <button onClick={this.save}>
                         <FaFloppyO />
                     </button>
