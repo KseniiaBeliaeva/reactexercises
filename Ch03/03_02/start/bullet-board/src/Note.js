@@ -3,6 +3,7 @@ import FaPencil from "react-icons/lib/fa/pencil";
 import FaTrash from "react-icons/lib/fa/trash";
 import FaFloppyO from "react-icons/lib/fa/floppy-o";
 import './index.css';
+
 class Note extends Component { 
     constructor(props) { 
         super(props)
@@ -44,7 +45,7 @@ class Note extends Component {
     renderDisplay() { 
         return (
             <div className='note'>
-                <p>Learn React</p>
+                <p>{this.props.children}</p>
                 <span>
                     <button id="edit" onClick={this.edit}>
                         <FaPencil />
